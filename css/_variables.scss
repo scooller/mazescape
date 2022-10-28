@@ -1,0 +1,22 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$ancho-contenido: map-get($grid-breakpoints,'lg');
+
+$primary-font: 'vollkornregular', sans-serif;
+$title-font: 'american_captainregular', sans-serif;
+$bold-font: 'vollkornbold', sans-serif;
+$menu-font: 'Bebas Neue', sans-serif;
+$icon-font: "Font Awesome 6 Free";
+
+$black: #000;
+$white: #fff;
+$gris: #837B87;
+
+$morado: #AD42DB;

@@ -1,0 +1,110 @@
+@import "variables";
+@import "breakpoints";
+:root{
+	--bs-body-font-size: .9rem;
+	--bs-body-line-height: 1;
+}
+body{
+	font-family: $primary-font;
+	color: $black;
+	background-color: $white;
+	text-align: left;
+	overflow-x: hidden;
+}
+a,button{
+	color: $black;
+	outline: none;
+	transition: all .5s ease-out;
+	&:focus{
+		color: $black;
+	}
+}
+.list-none{
+	list-style: none;
+}
+#menu{
+	font-family: $menu-font;
+	.navbar-collapse .nav-link{
+		color: $white;
+	}
+	.logo{
+		display: block;
+	}
+	.logo-negative{
+		display: none;
+	}
+	@include media-breakpoint-up(md) {
+		margin-top: 12px;
+		padding: 0;
+	}
+	.logo{
+		height: 1.5rem;
+	}
+	.navbar-collapse{
+		@include media-breakpoint-between(xs,sm) {
+			height: 100vh;
+		}
+		.nav-link{
+			color: $white;
+			position: relative;
+			padding: 1.4rem 1rem 1rem;
+			@include media-breakpoint-between(xs,sm) {
+				border: 1px solid $black;
+			}
+			&.active{
+				color: $black;
+				@include media-breakpoint-between(xs,sm) {
+					border-color: $white;
+				}
+				@include media-breakpoint-up(md) {
+					&::before{
+						content: "";
+						position: absolute;
+						display: block;
+						height: 2px;
+						width: 100%;
+						top: 0;
+						left: 0;
+						right: 0;
+						background-color: $white;
+					}
+				}
+			}
+		}
+	}
+	.btn-special{
+		font-weight: 500;
+		text-decoration: none;
+		@include media-breakpoint-between(xs,sm) {
+			margin-top: 3rem;
+		    padding: 1.4rem 1rem 1rem;
+			position: absolute;
+		}
+	}
+}
+a .img-fluid{
+	transition: all .5s ease-out;
+}
+.btn {
+	--bs-btn-border-radius: 1.5rem;
+	--bs-btn-padding-t: .8rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: .5rem;
+	padding: var(--bs-btn-padding-t) var(--bs-btn-padding-x) var(--bs-btn-padding-y);
+}
+.btn-primary{
+	--bs-btn-bg: #{$morado};
+	--bs-btn-border-color: #{$morado};
+	--bs-btn-hover-color: #{$white};
+	--bs-btn-hover-bg: #{$black};
+	--bs-btn-hover-border-color: #{$white};
+	--bs-btn-active-bg: #{$white};
+    --bs-btn-active-border-color: #{$white};
+	--bs-btn-disabled-bg: #{$gris};
+    --bs-btn-disabled-border-color: #{$gris};
+}
+.container{
+	@include media-breakpoint-up(md) {
+		max-width: $ancho-contenido;
+	}
+}
